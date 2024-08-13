@@ -1,0 +1,189 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+    #oceans {
+        height: auto;
+        background-color: white;
+    }
+
+    .oceans-head {
+        background-image: url("/wesr/web/sites/default/files/inline-images/shadman-sakib-BoEA8INz7jQ-unsplash.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 500px;
+        object-fit: center;
+        height: 500px;
+    }
+
+    hr.rounded-water {
+        border-top: 3px solid #00abf1;
+        border-radius: 3px;
+    }
+
+    .top-paragraph {}
+
+    .hiden-paragraph {
+        display: none;
+    }
+
+    .see-more-btn {
+        background-color: #00abf1;
+        color: white;
+    }
+
+    b,
+    span {
+        cursor: pointer;
+    }
+
+    .TreeMap {
+        width: 100%;
+        display: inline-flex;
+        padding-top: 10px;
+    }
+
+    .TreeMap-video {
+        width: 50%;
+    }
+
+    .TreeMap-txt {
+        width: 50%;
+        padding-left: 15px;
+    }
+
+    .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+    }
+
+    .row {
+        margin: 0 -5px;
+    }
+
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        background-color: #ffff;
+    }
+
+    @media only screen and (min-width: 200px) and (max-width: 600px) {
+        .oceans-head {
+            background-image: url("/wesr/web/sites/default/files/inline-images/shadman-sakib-BoEA8INz7jQ-unsplash.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 300px;
+            object-fit: center;
+            height: 250px;
+        }
+
+        .TreeMap {
+            width: 100%;
+            display: block;
+            padding-top: 10px;
+        }
+
+        .TreeMap-video {
+            width: 100%;
+        }
+
+        .TreeMap-txt {
+            width: 100%;
+            padding-left: 0px;
+        }
+
+    }
+</style>
+<div id="oceans">
+    <div class="oceans-head">
+        <h2 style="color:black; font-size:28px;">&nbsp;</h2>
+
+        <h2 style="color:white; font-size:28px;padding:40px;">Oceans</h2>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a
+                        href="https://www.globe.gov/web/earth-systems/community/ocean-protocol-bundle"
+                        target="_blank">GLOBE Ocean Protocol Bundle</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">Oceans are complex ecosystems, which
+                    implies that their study needs to take into consideration several interrelated physical parameters,
+                    not to mention <b class="see-more-btn" onclick="evtEllipse(this)">…</b> <span
+                        class="hiden-paragraph" onclick="spanEllipse(this)">mechanisms and processes which reflect the
+                        interaction between land and oceans along coastal zones as well as the interaction between the
+                        atmosphere and oceans. This group of protocols is to be jointly implemented to improve our
+                        knowledge about oceans <a
+                            href="https://www.globe.gov/web/earth-systems/community/ocean-protocol-bundle"
+                            target="_blank">see more...</a></span></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="http://www.secchidisk.org/"
+                        target="_blank">Secchi</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">This is a mobile interface which encourages
+                    mariners to participate in a global study of the phytoplankton in the sea. Phytoplankton support the
+                    marine <b class="see-more-btn" onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph"
+                        onclick="spanEllipse(this)"> food chain and scientists need help understanding the effects of
+                        climate change on their habitats. </span></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="" target="_blank">Marine Debris Tracker </a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">This is a joint partnership of the <a
+                        href="http://marinedebris.noaa.gov/" target="_blank"> NOAA Marine Debris Division </a> and the
+                    <a href="http://sea-mdi.engr.uga.edu/" target="_blank"> Southeast Atlantic Marine Debris
+                        Initiative.</a> <b class="see-more-btn" onclick="evtEllipse(this)">…</b> <span
+                        class="hiden-paragraph" onclick="spanEllipse(this)">(SEA-MDI). It allows users to log and
+                        document marine debris. It is available in Google Play and on iTunes for iPhone and iPad.<a
+                            href="http://www.secchidisk.org/" target="_blank">see more...</a></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="TreeMap">
+        <div class="TreeMap-video"><iframe height="345"
+                src="https://www.kickstarter.com/projects/openrov/openrov-trident-an-underwater-drone-for-everyone/widget/video.html"
+                width="100%"></iframe></div>
+
+        <div class="TreeMap-txt">
+            <h3 style="color:black;">OpenROV - mapping the world's oceans</h3>
+
+            <p style="color:black;">An Underwater Drone for Everyone</p>
+
+            <p>&nbsp;</p>
+        </div>
+    </div>
+</div>
+
+<hr class="rounded-water" />
+<script>
+
+    function evtEllipse(info) {
+        info.nextElementSibling.classList.toggle('hiden-paragraph');
+        info.classList.toggle('hiden-paragraph');
+    }
+    function spanEllipse(info) {
+        info.classList.toggle('hiden-paragraph');
+        info.previousElementSibling.classList.toggle('hiden-paragraph')
+    }
+</script>

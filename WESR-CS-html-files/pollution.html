@@ -1,0 +1,221 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+    #pollution {
+        height: auto;
+        background-color: white;
+    }
+
+    hr.rounded-water {
+        border-top: 3px solid #00abf1;
+        border-radius: 3px;
+    }
+
+    .head-poll {
+        background-image: url("/wesr/web/sites/default/files/inline-images/shutterstock_1354816103.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 550px;
+        object-fit: center;
+        height: 550px;
+    }
+
+    .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+    }
+
+    .row {
+        margin: 0 -5px;
+    }
+
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .top-paragraph {}
+
+    .hiden-paragraph {
+        display: none;
+    }
+
+    .see-more-btn {
+        background-color: #00abf1;
+        color: white;
+    }
+
+    b,
+    span {
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        background-color: #ffff;
+    }
+
+    @media only screen and (min-width: 200px) and (max-width: 600px) {
+        .head-poll {
+            background-image: url("/wesr/web/sites/default/files/inline-images/Pollution2.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 350px;
+            object-fit: center;
+            height: 300px;
+        }
+
+        .TreeMap {
+            width: 100%;
+            display: block;
+            padding-top: 10px;
+        }
+
+        .TreeMap-video {
+            width: 100%;
+        }
+
+        .TreeMap-txt {
+            width: 100%;
+            padding-left: 0px;
+        }
+
+    }
+</style>
+<div id="pollution">
+    <div class="head-poll">
+        <h2 style="color:black; font-size:28px;">&nbsp;</h2>
+
+        <h2 style="color:black; font-size:28px;padding:40px;">Pollution</h2>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:16px;text-align:center;"><a href="http://www.globeatnight.org/"
+                        target="_blank">&nbsp;GLOBE at Night</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">Germany’s Cosalux GmbH developed
+                    the&nbsp;<a href="http://cosalux.de/#/en/portfolio-en/loss-of-the-night-android-app/"
+                        target="_blank">Loss of the Night</a>&nbsp;app to help scientists measure and understand the
+                    effects of light pollution on health, <b class="see-more-btn" onclick="evtEllipse(this)">…</b> <span
+                        class="hiden-paragraph" onclick="spanEllipse(this)"> environment and society. Users take part in
+                        a worldwide citizen science project—called GLOBE at Night— by mapping light pollution and star
+                        visibility. <a href="http://www.globeatnight.org/" target="_blank">see more...</a></span></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="http://www.noisetube.net/#&amp;panel1-1"
+                        target="_blank">NOISE</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">It contains data related to strategic noise
+                    maps delivered in accordance with European Directive 2002/49/EC relating to the assessment and
+                    management of environmental noise. <b class="see-more-btn" onclick="evtEllipse(this)">…</b> <span
+                        class="hiden-paragraph" onclick="spanEllipse(this)"> It is the Noise Observation and Information
+                        Service for Europe maintained by the European Environment Agency (EEA) and the European Topic
+                        Centre for Air Pollution and Climate Change Mitigation (ETC-ACM) on behalf of the European
+                        Commission. </span></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="https://www.plumelabs.com/" target="_blank">Plume
+                        Labs</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">Lets Londoners track average pollution
+                    levels in their city.<a href="http://www.pigeonairpatrol.com/" target="_blank">Pigeon Air
+                        Patrol.</a> Pigeons are equipped with little backpacks carrying ultra-light pollution sensing ,
+                    <b class="see-more-btn" onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph"
+                        onclick="spanEllipse(this)"> In March 2016, they launched the first ever flock of
+                        pollution-monitoring pigeons to map pollution in the city - Pigeon Air Patrol. Pigeons are
+                        equipped with little backpacks carrying ultra-light pollution sensing technologies to track air
+                        quality all around London.<a href="https://www.plumelabs.com/" target="_blank">see
+                            more...</a></span></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="http://www.noisetube.net/#&amp;panel1-1"
+                        target="_blank">NoiseTube</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">Created with the purpose of turning
+                    smartphones into mobile noise level meters. The NoiseTube research project began in 2008 at the Sony
+                    . <b class="see-more-btn" onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph"
+                        onclick="spanEllipse(this)">Computer Science Laboratory Paris in partnership with the Free
+                        University of Brussels to study the public’s exposure to noise in everyday environments. <a
+                            href="http://www.noisetube.net/#&amp;panel1-1" target="_blank">see more...</a></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:16px;text-align:center;"><a href="http://www.buiometriapartecipativa.org/"
+                        target="_blank">BuioMetria Partecipativa</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">&amp;The Participatory night sky quality
+                    monitoring project (BuioMetria Partecipativa) started from Italy in 2008. It promotes collection of
+                    data on light <b class="see-more-btn" onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph"
+                        onclick="spanEllipse(this)">light pollution using a Sky Quality Meter and fixed SQM stations
+                        producing high-quality time series light pollution. Since January 2013 Attivarti.org represents
+                        Italy in a research network involving almost 40 organizations in 18 countries, funded within the
+                        European COST programme. <a href="http://www.buiometriapartecipativa.org/" target="_blank">see
+                            more...</a></span></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a
+                        href="http://www.ipe.org.cn/PollutionMapApp_DownLoad.aspx" target="_blank">Pollution Map</a>
+                </h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">The 'Pollution Map' app (available for
+                    both&nbsp;iOS&nbsp;and&nbsp;Android) has been developed by Beijing-based Institute of Public and
+                    Environmental <b class="see-more-btn" onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph"
+                        onclick="spanEllipse(this)"> Affairs and uses data from some 15,000 factories throughout China
+                        that are now required to report emissions to local officials and the Environment Ministry on an
+                        hourly basis. <a href="http://www.ipe.org.cn/PollutionMapApp_DownLoad.aspx" target="_blank">see
+                            more..</a></span></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:16px;text-align:center;"><a href="http://www.worstpolluted.org/"
+                        target="_blank">World’s worse pollution problems 2015.</a></h3>
+
+                <p style="color:black;font-size:14px;"><b class="see-more-btn" onclick="evtEllipse(this)">…</b> <span
+                        class="hiden-paragraph" onclick="spanEllipse(this)"> <a href="http://www.worstpolluted.org/"
+                            target="_blank">see more...</a></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="rounded-water" />
+<script>
+
+    function evtEllipse(info) {
+        info.nextElementSibling.classList.toggle('hiden-paragraph');
+        info.classList.toggle('hiden-paragraph');
+    }
+    function spanEllipse(info) {
+        info.classList.toggle('hiden-paragraph');
+        info.previousElementSibling.classList.toggle('hiden-paragraph')
+    }
+</script>

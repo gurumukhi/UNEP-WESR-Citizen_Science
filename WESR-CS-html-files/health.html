@@ -1,0 +1,210 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+    #health {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+    }
+
+    .head-health {
+        background-image: url("/wesr/web/sites/default/files/inline-images/shutterstock_1824743645_3.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 550px;
+        object-fit: center;
+        height: 550px;
+        margin-top: 50px;
+    }
+
+    hr.rounded-water {
+        border-top: 3px solid #00abf1;
+        border-radius: 3px;
+    }
+
+    .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+    }
+
+    .row {
+        margin: 0 -5px;
+    }
+
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .top-paragraph {}
+
+    .hiden-paragraph {
+        display: none;
+    }
+
+    .see-more-btn {
+        background-color: #00abf1;
+        color: white;
+    }
+
+    b,
+    span {
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        background-color: #ffff;
+    }
+
+    .TreeMap {
+        width: 100%;
+        display: inline-flex;
+        padding-top: 10px;
+    }
+
+    .TreeMap-video {
+        width: 50%;
+    }
+
+    .TreeMap-txt {
+        width: 50%;
+        padding-left: 15px;
+    }
+
+    @media only screen and (min-width: 200px) and (max-width: 600px) {
+        .head-health {
+            background-image: url("/wesr/web/sites/default/files/inline-images/health2.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 300px;
+            object-fit: center;
+            height: 350px;
+            margin-top: 50px;
+        }
+
+        .TreeMap {
+            width: 100%;
+            display: block;
+            padding-top: 10px;
+        }
+
+        .TreeMap-video {
+            width: 100%;
+        }
+
+        .TreeMap-txt {
+            width: 100%;
+            padding-left: 0px;
+        }
+
+    }
+</style>
+<div id="health">
+    <div class="head-health">
+        <h2 style="color:black; font-size:28px;">&nbsp;</h2>
+
+        <h2 style="color:black; font-size:28px;padding:40px;">Health</h2>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="https://www.globe.gov/web/globe-mosquito-project"
+                        target="_blank">GLOBE Zika Education and Prevention Project:</a></h3>
+
+                <p class="top-paragraph" style="color:black; font-size:14px;">A global initiative enlisting thousands of
+                    students, teachers, and communities to collect data on mosquitoes,<b class="see-more-btn"
+                        onclick="evtEllipse(this)">… </b> <span class="hiden-paragraph" onclick="spanEllipse(this)"> for
+                        a global mapping project that is building networks with public health officials to better
+                        control mosquitoes and reduce mosquito-borne infectious disease. <b class="see-more-btn"
+                            onclick="evtEllipse(this)">…</b> <a href="https://www.globe.gov/web/globe-mosquito-project"
+                            target="_blank">visit...</a> </span></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a
+                        href="https://www.globe.gov/web/globe-mosquito-project/overview/the-globe-observer-app"
+                        target="_blank">GLOBE Observer Mosquito Habitat Mapper:</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">The tool allows citizen scientists to train
+                    in the GLOBE Mosquito Protocol, identify disease-carrying mosquitoes, <b class="see-more-btn"
+                        onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph"
+                        onclick="spanEllipse(this)">eliminate their breeding sites, and prevent future Zika and other
+                        mosquito-borne disease outbreaks. <a
+                            href="https://www.globe.gov/web/globe-mosquito-project/overview/the-globe-observer-app"
+                            target="_blank">see more...</a></span></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a
+                        href="https://www.globe.gov/web/earth-systems/community/mosquito-bundle">GLOBE Mosquito
+                        Protocol Bundle:</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">This protocol&nbsp;bundle combines all
+                    GLOBE protocols that are related to the Mosquito habitat mapper app <b class="see-more-btn"
+                        onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph" onclick="spanEllipse(this)">and
+                        explains how they are related. <a
+                            href="https://www.globe.gov/web/earth-systems/community/mosquito-bundle" target="_blank">see
+                            more...</a> </span></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="http://www.mosquitoalert.com/en/"
+                        target="_blank">Mosquito Alert - </a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">This data set has been created through the
+                    efforts of the Mosquito Alert team, <b class="see-more-btn" onclick="evtEllipse(this)">…</b> <span
+                        class="hiden-paragraph" onclick="spanEllipse(this)">and the thousands of citizen scientists who
+                        have volunteered their energy and contributed reports on the Mosquito Alert platform.<a
+                            href="http://www.mosquitoalert.com/en/" target="_blank">see more...</a><a
+                            href="http://www.mosquitoalert.com/en/participate-now/" target="_blank">Participate
+                            Now</a></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="TreeMap">
+        <div class="TreeMap-video"><iframe height="490px" padding-left="5px" src="https://www.healthmap.org/en/"
+                title="Health-Map" width="100%"></iframe></div>
+
+        <div class="TreeMap-txt">
+            <h3 style="font-size:16px;"><a href="http://www.healthmap.org/" target="_blank" title="Health Map">Health
+                    Map</a></h3>
+
+            <p style="color:black;">This is an established global leader in utilizing online informal sources for
+                disease outbreak monitoring and real-time surveillance of emerging public health threats. It delivers
+                real-time intelligence on a broad range of emerging infectious diseases for a diverse audience including
+                libraries, local health departments, governments, and international travelers.<br />
+                Outbreaks Near Me :&nbsp;</p>
+        </div>
+    </div>
+</div>
+
+<hr class="rounded-water" />
+<script>
+
+    function evtEllipse(info) {
+        info.nextElementSibling.classList.toggle('hiden-paragraph');
+        info.classList.toggle('hiden-paragraph');
+    }
+    function spanEllipse(info) {
+        info.classList.toggle('hiden-paragraph');
+        info.previousElementSibling.classList.toggle('hiden-paragraph')
+    }
+</script>

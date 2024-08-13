@@ -1,0 +1,141 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+    #spatial {
+        height: auto;
+        background-color: white;
+    }
+
+    .head-spatial {
+        background-image: url("/wesr/web/sites/default/files/inline-images/MTG%20-%20Meteosat%20Third%20Generation_V2_%20%C2%A9%20Thales%20Alenia%20Space_Master%20Image%20Programmes.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 550px;
+        object-fit: center;
+        height: 550px;
+    }
+
+    hr.rounded-water {
+        border-top: 3px solid #00abf1;
+        border-radius: 3px;
+    }
+
+    .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+    }
+
+    .row {
+        margin: 0 -5px;
+    }
+
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .top-paragraph {}
+
+    .hiden-paragraph {
+        display: none;
+    }
+
+    .see-more-btn {
+        background-color: #00abf1;
+        color: white;
+    }
+
+    b,
+    span {
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .head-spatial {
+            background-image: url("/wesr/web/sites/default/files/inline-images/MTG%20-%20Meteosat%20Third%20Generation_V2_%20%C2%A9%20Thales%20Alenia%20Space_Master%20Image%20Programmes.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 350px;
+            object-fit: center;
+            height: 300px;
+        }
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        background-color: #ffff;
+    }
+</style>
+<div id="spatial">
+    <div class="head-spatial">
+        <h2>&nbsp;</h2>
+
+        <h2 style="color:white; font-size:28px;padding:40px;">Spatial Programmes</h2>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="https://cartodb.com/" target="_blank">CartoDB</a>
+                </h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">This is an online mapping software that
+                    uses visualization, collaboration, and analysis to present citizen science data in a simple and
+                    beautiful <b class="see-more-btn" onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph"
+                        onclick="spanEllipse(this)">web interface. It offers dynamic rendering and geo-temporal
+                        visualizations of real-time maps that show data as it happens. The strength of the platform is
+                        in enabling users to easily implement analytically robust data driven solutions. Showcased below
+                        are a few examples of maps in action. More examples of maps developed using CartoDB can be found
+                        here <a href="https://cartodb.com/" target="_blank">see more...</a></span></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="http://what3words.com/"
+                        target="_blank">What3words;</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">This is a unique combination of just 3
+                    words that identifies a 3mx3m square, anywhere on the planet. It helps deliver business
+                    efficiencies,&nbsp; &nbsp; &nbsp; &nbsp;<b class="see-more-btn" onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)"> drive growth and help the social &amp;
+                        economic development of countries. Example of use: A UN-ASIGN application has been developed by
+                        AnsuR for crowd sourcing geo-tagged photos and text from areas affected by large humanitarian
+                        disasters to the United Nations entity UNITAR/UNOSAT. Download app iTunes or Android. <a
+                            href="http://what3words.com/" target="_blank">see more...</a></span></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="http://data.globalforestwatch.org/"
+                        target="_blank">Global Forest Watch Open Data Portal</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">Includes forest change, forest cover,
+                    forest use, conservation and people data. <b class="see-more-btn" onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)"> <a
+                            href="http://data.globalforestwatch.org/" target="_blank">see more...</a></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="rounded-water" />
+<script>
+
+    function evtEllipse(info) {
+        info.nextElementSibling.classList.toggle('hiden-paragraph');
+        info.classList.toggle('hiden-paragraph');
+    }
+    function spanEllipse(info) {
+        info.classList.toggle('hiden-paragraph');
+        info.previousElementSibling.classList.toggle('hiden-paragraph')
+    }
+</script>

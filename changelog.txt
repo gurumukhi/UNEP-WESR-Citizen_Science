@@ -1,0 +1,2 @@
+* First backup files are available in wesr-cs-backup-1.zip
+* Working files in the WESR-CS-html-files folder

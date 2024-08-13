@@ -1,0 +1,287 @@
+<style type="text/css">
+    .bio-head {
+        background-image: url("/wesr/web/sites/default/files/inline-images/shutterstock_2035082570.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 500px;
+        object-fit: center;
+        height: 500px;
+    }
+
+    hr.rounded-water {
+        border-top: 3px solid #00abf1;
+        border-radius: 3px;
+    }
+
+    .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+    }
+
+    .row {
+        margin: 0 -5px;
+    }
+
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .top-paragraph {}
+
+    .hiden-paragraph {
+        display: none;
+    }
+
+    .see-more-btn {
+        background-color: #00abf1;
+        color: white;
+    }
+
+    b,
+    span {
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        background-color: #ffff;
+    }
+
+    .TreeMap {
+        width: 100%;
+        display: inline-flex;
+        padding-top: 10px;
+    }
+
+    .TreeMap-video {
+        width: 50%;
+    }
+
+    .TreeMap-txt {
+        width: 50%;
+        padding-left: 15px;
+    }
+
+    @media only screen and (min-width: 200px) and (max-width: 600px) {
+        .bio-head {
+            background-image: url("/wesr/web/sites/default/files/inline-images/biodiversity2.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 350px;
+            object-fit: center;
+            height: 300px;
+        }
+
+        .TreeMap {
+            width: 100%;
+            display: block;
+            padding-top: 10px;
+        }
+
+        .TreeMap-video {
+            width: 100%;
+        }
+
+        .TreeMap-txt {
+            width: 100%;
+            padding-left: 0px;
+        }
+
+    }
+</style>
+<div id="biodiversity">
+    <div class="bio-head">
+        <h2 style="color:white; font-size:28px;">&nbsp;</h2>
+
+        <h2 style="color:black; font-size:28px;padding:40px;">Biodversity</h2>
+    </div>
+    &nbsp;
+
+    <div class="bio-sec1">
+        <div class="row" style="margin-top:10px;">
+            <div class="column">
+                <div class="card">
+                    <h3 style="font-size:14px;text-align:center;"><a href="https://www.globe.gov/web/biosphere/"
+                            target="_blank">GLOBE Biosphere</a></h3>
+
+                    <p class="top-paragraph" style="color:black; font-size:14px;">The Biosphere Protocols offer ways to
+                        quantify seasonal change, land cover, land use, and the amounts of living and dead <b
+                            class="see-more-btn" onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph"
+                            onclick="spanEllipse(this)"> biomass on the land surface. <a
+                                href="https://www.globe.gov/web/biosphere/" target="_blank">see more...</a></span></p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <h3 style="font-size:14px;text-align:center;"><a href="http://www.cybertracker.org/"
+                            target="_blank">CyberTracker</a></h3>
+
+                    <p class="top-paragraph" style="color:black;font-size:14px;">CyberTracker projects have been
+                        initiated to monitor and help capture observations on a daily basis and make, <b
+                            class="see-more-btn" onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph"
+                            onclick="spanEllipse(this)"> it possible to visualize changes in the global ecosystem in
+                            real time.<a href="http://www.cybertracker.org/" target="_blank">see more...</a></span></p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <h3 style="font-size:14px;text-align:center;"><a
+                            href="http://solutions.arcgis.com/state-government/help/citizen-science/"
+                            target="_blank;">ESRI Citizen Science Manager</a></h3>
+
+                    <p class="top-paragraph" style="color:black;font-size:14px;">Presents one or more maps used to
+                        report observations of wild plants or animals. Users can anonymously submit&nbsp;<b
+                            class="see-more-btn" onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph"
+                            onclick="spanEllipse(this)"> new reports, review existing reports, and comment and vote on
+                            reports or observations submitted by other users. They also can authenticate with their
+                            social media or ArcGIS credentials and track the status of observations they have
+                            reported.<a href="http://solutions.arcgis.com/state-government/help/citizen-science/"
+                                target="_blank">see more...</a></span></p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <h3 style="font-size:14px;text-align:center;"><a href="http://www.audubon.org/audubon-near-you"
+                            target="_blank">National Audubon Society</a></h3>
+
+                    <p class="top-paragraph" style="color:black;font-size:14px;">Aims to conserve and restore natural
+                        ecosystems, focusing on birds, other wildlife, and their habitats for the benefit <b
+                            class="see-more-btn" onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph"
+                            onclick="spanEllipse(this)"> of humanity and the earth's biological diversity.<a
+                                href="http://www.audubon.org/audubon-near-you" target="_blank">see more...</a></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:10px;">
+            <div class="column">
+                <div class="card">
+                    <h3 style="font-size:14px;text-align:center;"><a href="https://www.naturewatch.ca/register/"
+                            target="_blank">NatureWatch</a></h3>
+
+                    <p class="top-paragraph" style="color:black;font-size:14px;">This is a community that engages
+                        Canadians in collecting scientific information on nature to understand the changing environment.
+                        <b class="see-more-btn" onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph"
+                            onclick="spanEllipse(this)"><a href="https://www.naturewatch.ca/register/"
+                                target="_blank">see more...</a></span></p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <h3 style="font-size:14px;text-align:center;"><a href="http://www.projectnoah.org/missions/create"
+                            target="_blank">Project Noah</a></h3>
+
+                    <p class="top-paragraph" style="color:black;font-size:14px;">This is a leading resource for nature
+                        exploration and documentation. Create a mission today and harness the <b class="see-more-btn"
+                            onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph" onclick="spanEllipse(this)">
+                            power of their platform for your cause.<a href="http://www.projectnoah.org/missions/create"
+                                target="_blank">see more...</a></span></p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <h3 style="font-size:14px;text-align:center;"><a
+                            href="http://www.padddtracker.org/resources/glossary#PADDD" target="_blank">PADDD</a></h3>
+
+                    <p class="top-paragraph" style="color:black;font-size:14px;">Recent research points to the
+                        widespread (but largely overlooked) protected area downgrading, downsizing, <b
+                            class="see-more-btn" onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph"
+                            onclick="spanEllipse(this)">and degazettement (PADDD).In response, PADDDtracker.org is
+                            documenting the patterns, trends, causes, and consequences of PADDD. PADDDtracker.org allows
+                            you to learn about PADDD, track events and share your experiences with the world.
+                            PADDDtracker.org is an initiative of the World Wildlife Fund. <a
+                                href="http://www.padddtracker.org/resources/glossary#PADDD" target="_blank">see
+                                more...</a></span></p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <h3 style="font-size:14px;text-align:center;"><a href="http://whatsinvasive.com/"
+                            target="_blank">What’s Invasive app</a></h3>
+
+                    <p class="top-paragraph" style="color:black;font-size:14px;">helps experts find Invasive species –
+                        which often threaten native plants and animals. It has been developed by the University of
+                        Georgia. <b class="see-more-btn" onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph"
+                            onclick="spanEllipse(this)"> <a href="http://whatsinvasive.com/" target="_blank">see
+                                more...</a></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:10px;">
+            <div class="column">
+                <div class="card">
+                    <h3 style="font-size:14px;text-align:center;"><a href="">Biocaching</a></h3>
+
+                    <p class="top-paragraph" style="color:black;font-size:14px;">Biocaching is a concept under
+                        development and aims to be an educative gaming app, based on observing<b class="see-more-btn"
+                            onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph" onclick="spanEllipse(this)">
+                            and taking pictures of species. A design goal is that the app will be easy to use, with
+                            tools to help the user identify the species, and fun, with a gaming concept that engages
+                            users over time. Biocaching will use open data from diverse sources, such as the Norwegian
+                            Biodiversity Information Centre (NBIC), the Encyclopedia of Life, the Catalogue of Life and
+                            Wikipedia. All observations collected by the Biocaching game will be forwarded to the Global
+                            Biodiversity Information Facility (GBIF), and will be freely available for use by both
+                            science and the society.<a href="" target="_blank">see more...</a></span></p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <h3 style="font-size:14px;text-align:center;"><a href="http://www.wwviews.org/"
+                            target="_blank">World Wide Views</a></h3>
+
+                    <p class="top-paragraph" style="color:black;font-size:14px;">provides decision-makers with a unique
+                        insight into the global public opinion on complex governance issues that <b class="see-more-btn"
+                            onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph" onclick="spanEllipse(this)">
+                            are debated and negotiated at global venues, such as the UN. See the 2015 World wide views
+                            on Climate and Energy. The 2016 project will focus on Biodiversity.<a
+                                href="http://www.wwviews.org/" target="_blank">see more...</a></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="TreeMap">
+        <div class="TreeMap-video"><iframe height="345" src="https://www.youtube.com/embed/6gLoIQZbqaQ
+?autoplay=1&amp;mute=1" width="100%"></iframe></div>
+
+        <div class="TreeMap-txt">
+            <p style="color:black;">The&nbsp;<a href="https://www.opentreemap.org/"
+                    target="_blank">OpenTreeMap</a>&nbsp;software by Azavea is an open source collaborative platform for
+                crowdsourced tree inventory, ecosystem services calculations, urban forestry analysis, and community
+                engagement.<a href="">see more...</a></p>
+        </div>
+    </div>
+</div>
+
+<hr class="rounded-water" />
+<script>
+
+    function evtEllipse(info) {
+        info.nextElementSibling.classList.toggle('hiden-paragraph');
+        info.classList.toggle('hiden-paragraph');
+    }
+    function spanEllipse(info) {
+        info.classList.toggle('hiden-paragraph');
+        info.previousElementSibling.classList.toggle('hiden-paragraph')
+    }
+</script>

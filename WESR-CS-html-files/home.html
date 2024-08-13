@@ -1,0 +1,126 @@
+<style type="text/css">
+    .cit-header {
+        background-image: url("/wesr/web/sites/default/files/inline-images/shutterstock_2140985473_2.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 550px;
+        object-fit: center;
+        height: 550px;
+
+    }
+
+    .cit-navbar {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 50px;
+
+    }
+
+    .cit-nav {
+        position: relative;
+        height: 50px;
+        width: 100%;
+        diplay: flex;
+        align-items: center;
+        padding-bottom: 100px;
+    }
+
+    .cit-nav ul {
+        display: flex;
+    }
+
+    .cit-nav ul li {
+
+        display: inline-flex;
+        cursor: pointer;
+        font-size: 14px;
+        text-align: center;
+        position: relative;
+    }
+
+    li::before {
+        background-color: #FFF !important;
+    }
+
+    .cit-nav ul li a {
+        text-decoration-line: none;
+        padding: 8px 8px;
+        border-bottom: solid 1px;
+        border-left: solid 1px;
+        border-right: solid 1px;
+        height: 75px;
+    }
+
+    .cit-nav ul li a:hover {
+        background-color: #DCDCDC;
+        color: #000;
+
+    }
+
+    #myBtn1 {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: #00abf1;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 4px;
+    }
+
+    #myBtn1:hover {
+        background-color: #87CEFA;
+        color: white;
+    }
+</style>
+<div class="cit-header">
+    <h2 style="color:black; font-size:28px;">&nbsp;</h2>
+
+    <h2 style="color:black;padding:40px;">World Environment Situation Room Citizen Science portal</h2>
+</div>
+
+<div class="cit-navbar">
+    <nav class="cit-nav">
+        <ul>
+            <li><a href="#health">Health</a></li>
+            <li><a href="#biodiversity">Biodiversity</a></li>
+            <li><a href="#hydro-air">Air Quality Measurements</a></li>
+            <li><a href="#oceans">Oceans</a></li>
+            <li><a href="#pollution">Pollution</a></li>
+            <li><a href="#citizen">Project Inventories</a></li>
+            <li><a href="#spatial">Spatial Programmes</a></li>
+            <li><a href="#waste">Waste</a></li>
+            <li><a href="#additional">Additional Resources</a></li>
+        </ul>
+    </nav>
+</div>
+
+<hr class="rounded-water" />
+<p><button id="myBtn1" onclick="topFunction()" title="Go to top">Top</button>
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn1");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</p>
