@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<!--[if lte IE 7]> <html class="ie7"> <![endif]-->
+<!--[if IE 8]>     <html class="ie8"> <![endif]-->
+<!--[if IE 9]>     <html class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" style="" class="js no-touch csstransitions fancybox-lock"><!--<![endif]--><head>
+                <title>Flu &amp; Ebola Map | Virus &amp; Contagious Disease Surveillance</title>
+                <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9"> 
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="apple-itunes-app" content="app-id=328358693">
+        <!--<meta name="google-play-app" content="app-id=org.healthmap.outbreaksnearme">-->
+                    <meta name="description" content="HealthMap brings together disparate data sources to achieve a unified and comprehensive view of the current global state of infectious diseases.">
+                        
+                <!-- FACEBOOK META TAGS -->
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="http://healthmap.org">
+        <meta property="og:image" content="http://healthmap.org/images/3.0/hm_lg_icon.png">    
+        <meta property="og:title" content="HealthMap | Flu Map | Contagious Disease Surveillance | Virus Awareness">
+        <meta property="og:description" content="HealthMap brings together disparate data sources to achieve a unified and comprehensive view of the current global state of infectious diseases.">
+        <meta property="article:publisher" content="https://www.facebook.com/healthmap">
+        <!-- TWITTER META TAGS -->
+        <meta name="twitter:card" content="summary"> <meta name="twitter:site" content="@healthmap">
+        <meta name="twitter:domain" content="HealthMap brings together disparate data sources to achieve a unified and comprehensive view of the current
+global state of infectious diseases.">
+        <meta name="twitter:creator" content="@healthmap">    
+                <link rel="stylesheet" href="a_data/fonts.css">
+        <link rel="stylesheet" href="a_data/jquery.fancybox.css">
+        <link rel="stylesheet" href="a_data/rating.css">
+        <link rel="stylesheet" href="a_data/jquery.ui.all.css">
+        <link rel="stylesheet" href="a_data/styles.css">
+        <link rel="stylesheet" href="a_data/font-awesome.min.css">
+        <link rel="stylesheet" href="a_data/font-awesome-ie7.min.css">
+        <link rel="stylesheet" href="a_data/jquery.qtip.css">
+        <link rel="stylesheet" href="a_data/jquery.dropdown.css">
+        <!--<link rel="stylesheet" href="../css/jquery.smartbanner.css">-->
+                <!--[if (!IE)|(gt IE 8)]> -->
+        <link rel="stylesheet" href="a_data/d3.css">
+        <!-- <![endif]-->
+                        <script src="a_data/markerclusterer.js"></script>
+        <script src="a_data/jquery.min.js"></script>
+        <script src="a_data/jquerymigrate.js"></script>
+        <script src="a_data/jquery_ui.js"></script>
+        <script src="a_data/jquery.tools.min.js"></script> 
+        <script src="a_data/jquery.cookie.js"></script>
+        <script src="a_data/jquery.qtip.min.js"></script>
+        <script src="a_data/jquery.dropdown.js"></script>
+        <!--<script src="../js/jquery.smartbanner.js"></script>-->
+        <script src="a_data/modernizr.dropdown.js"></script>
+        <script src="a_data/locator.js"></script>
+        <!--<script src="../js/placeholders.min.js"></script>-->
+        <script src="a_data/jquery.infieldlabel.min.js"></script>
+        <script src="a_data/hm.js"></script>
+        <script src="a_data/countries.js"></script>
+        <script src="a_data/jquery.fancybox.pack.js"></script>
+        <script src="a_data/jquery.dataTables.js"></script>
+        <script src="a_data/fancybox.js"></script>
+        <script src="a_data/mapvisuals.js"></script>
+        <script src="a_data/mapfunctions.js"></script>
+        <script src="a_data/searchfunctions.js"></script>
+        <script src="a_data/presetfunctions.js"></script>
+        <script src="a_data/kmlfunctions.js"></script>
+        <script src="a_data/displayoptions.js"></script>
+                                <script src="a_data/listview.js"></script>
+                <script src="a_data/general.js"></script>
+                <script src="a_data/hmspecific.js"></script>
+        
+                <script src="a_data/trendfunctions.js"></script>
+
+                <!--[if (!IE)|(gt IE 8)]> -->
+        <script src="a_data/d3.v3.js"></script>
+        <!--[endif]---->
+        <!--[if lte IE 8]> 
+        <script src="../js/excanvas.js"></script>
+        <script src="../js/dygraph.js"></script>
+        <![endif]-->
+        
+                
+                <script type="text/javascript" src="a_data/js.js"></script> 
+                <script src="a_data/loader.js"></script>
+                <script src="a_data/jquery.geocomplete.min.js"></script>
+        
+        <script>
+//google.maps.visualRefresh = true;
+        var path_to_main = '../';
+        var path_to_pins = '../';
+        var path_to_news_form = '../forms';
+        var partner = 'hm';
+        var location_info = new Object();
+        var preset_id;
+        var map;
+        var hmu_id;
+        var hmcookie;
+        var adv_search_data = new Object();
+        var you_icon;
+        var pins = new Array();
+        var contents = new Array();
+        var ibArray = new Object();
+        var polyibArray = new Object();
+        var markerArray = new Object();
+        var polyArray = new Array();
+        var local_preset_id = 381;
+        var middlezoom = 5;
+        var localzoom = 7;
+        var minzoom = 3;
+        var maxzoom = 15;
+        var worldlat = 15;
+        var worldlon = 18;
+        var worldzoom = 2;
+        var listView;
+        var urls = ['../js/picklists/diseases_picklist.js', '../js/picklists/locations_picklist.js', '../js/picklists/sources_picklist.js', '../js/picklists/species_picklist.js'];
+        var alldtypes = ['diseases','locations','sources','species'];
+                var allcats = ['1','2','29'];
+        var geolocation = '1';
+        var defaultMapStyle = 'hmstyle';
+        var preciselocations = '1';
+        var marker_cluster = '';
+        var trends_showing = false;
+        var kmlmapicon = '';
+        var polyoverlay = '';
+        var search_filters = new Object();
+        var query;
+        var default_radius = 250;
+        var default_sort_col = 1;
+        var yah = '';
+        var prompt_new_pass = 0;        
+        hmu_id = '';
+    
+$(document).ready(function () {
+    location_info['default_lat'] = location_info['zoom_lat'] ? location_info['zoom_lat'] : '17.3833';
+    location_info['default_lon'] = location_info['zoom_lon'] ? location_info['zoom_lon'] : '78.4667';
+    location_info['default_radius'] = default_radius ? default_radius : '';
+    location_info['default_locname'] = '';
+    location_info['default_country'] = '';
+    preset_id = '';
+        hmu_username = '';
+    if(hmu_id) {
+        var logincontent = '<a href="../admin/profile.php">Hello ' + hmu_username + '</a><a class="logout" href="../admin/logout.php">Log Out</a>';
+        $('#edit_presets, #saveview, #email_alerts').show();
+        $('body').addClass('loggedin');
+    } else {
+        var logincontent = '<a href="../forms/login.html">Log In</a>';
+        $('body').removeClass('loggedin');
+            // don't show quickview in edit mode if not logged in
+        $('#saveview').hide();
+        }
+    $('.logout').on('click', function() {
+        $('body').removeClass('loggedin');
+    });
+    $('.login').on('click', function() {
+        $('body').addClass('loggedin');
+    });
+    $('#loginsection').html(logincontent);
+    
+    
+    // now serve the map OR geolocate, need lat/lon & locname in all cases for the "Your location" information
+    if(!location_info['default_lat'] || !location_info['default_lon']) {
+        w3c_geolocate(function(latlon) {
+            google_geo_by_ll(latlon[0], latlon[1], function(locinfo) { 
+                set_user_location(locinfo, hmu_id, preset_id, true);
+            });
+        }); 
+    } else if(!location_info['default_locname'] || !location_info['default_country']) { // have lat/lon but don't have rest of info about location, get from geocoder
+        google_geo_by_ll(location_info['default_lat'], location_info['default_lon'], function(locinfo) { 
+            set_user_location(locinfo, hmu_id, preset_id, true);
+        });
+    } else { // it all came in via the hmu table or cookie
+        set_user_location(location_info, hmu_id, preset_id, false);
+    }
+
+    // smart app banner 
+   /* var ua = navigator.userAgent.toLowerCase();
+    var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+    if(isAndroid) {
+        $.smartbanner({
+            title: 'Outbreaks Near Me',
+            author: 'John Brownstein',
+            icon: 'http://healthmap.org/images/3.0/onm-touch-icon.png',
+            daysHidden: 0,
+            daysReminder: 0
+        });
+    } */
+});
+
+</script>
+<script src="a_data/infobox.js"></script>
+<!--
+/* @license
+ * MyFonts Webfont Build ID 2315633, 2012-06-26T13:54:55-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Museo Sans 700 by exljbris
+ * URL: http://www.myfonts.com/fonts/exljbris/museo-sans/700/
+ * Copyright: Copyright (c) 2008 by Jos Buivenga. All rights reserved.
+ * Licensed pageviews: 10,000
+ * 
+ * Webfont: Museo Sans 300 by exljbris
+ * URL: http://www.myfonts.com/fonts/exljbris/museo-sans/300/
+ * Copyright: Copyright (c) 2008 by Jos Buivenga. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Museo Sans 500 by exljbris
+ * URL: http://www.myfonts.com/fonts/exljbris/museo-sans/500/
+ * Copyright: Copyright (c) 2008 by Jos Buivenga. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Museo Sans 100 by exljbris
+ * URL: http://www.myfonts.com/fonts/exljbris/museo-sans/100/
+ * Copyright: Copyright (c) 2008 by Jos Buivenga. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Museo Slab 100 by exljbris
+ * URL: http://www.myfonts.com/fonts/exljbris/museo-slab/100/
+ * Copyright: Copyright (c) 2009 by Jos Buivenga. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Museo Slab 700 by exljbris
+ * URL: http://www.myfonts.com/fonts/exljbris/museo-slab/700/
+ * Copyright: Copyright (c) 2009 by Jos Buivenga. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Museo Slab 300 by exljbris
+ * URL: http://www.myfonts.com/fonts/exljbris/museo-slab/300/
+ * Copyright: Copyright (c) 2009 by Jos Buivenga. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Museo Slab 500 by exljbris
+ * URL: http://www.myfonts.com/fonts/exljbris/museo-slab/500/
+ * Copyright: Copyright (c) 2009 by Jos Buivenga. All rights reserved.
+ * Licensed pageviews: unspecified
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2315633
+ * 
+ * © 2012 Bitstream Inc
+*/
+-->
+
+<!--<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17547010-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
+</script>-->
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="a_data/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YF54PGKVEF');
+</script>
+
+<style type="text/css">.fancybox-margin{margin-right:0px;}</style><script type="text/javascript" charset="UTF-8" src="a_data/common.js"></script><script type="text/javascript" charset="UTF-8" src="a_data/util.js"></script><script type="text/javascript" charset="UTF-8" src="a_data/geocoder.js"></script><script type="text/javascript" charset="UTF-8" src="a_data/AuthenticationService.js"></script><script type="text/javascript" charset="UTF-8" src="a_data/GeocodeService.js"></script><script type="text/javascript" charset="UTF-8" src="a_data/map.js"></script><script type="text/javascript" charset="UTF-8" src="a_data/marker.js"></script></head>
+
+<body class="vsc-initialized">
+<div id="page">
+    <div id="search_loadingMsg" class="hide">
+        <i class="icon-spinner icon-spin"></i>
+    </div>
+    <div id="zoom-slider"><div id="zoom-range"><div id="zoom-path" class="ui-slider ui-slider-vertical ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="bottom: 28.5714%;"></a></div></div></div>
+    <section id="map_canvas"><div style="height: 100%; width: 100%;"></div></section>
+
+    <section id="trends_view">
+        <header></header>
+        <div id="trends_wrapper">
+        <div id="trends_content">
+            <div id="chart_div"></div>
+            <div id="chart_info">
+            <p>&nbsp;</p>            </div>
+        </div>
+            <div id="loadingMsg" class="hide">
+            <p><i class="icon-spinner icon-spin"></i> looking for trends...</p>
+            </div></div>
+    </section>
+
+    <section id="list_view">
+        <div id="list_view_table_wrapper" class="dataTables_wrapper" role="grid"><div id="list_view_table_length" class="dataTables_length"><label>Display <select size="1" name="list_view_table_length" aria-controls="list_view_table"><option value="5" selected="selected">5</option><option value="10">10</option><option value="20">20</option><option value="-1">All</option></select> results</label></div><div class="dataTables_filter" id="list_view_table_filter"><label>Filter Results <input type="text" aria-controls="list_view_table"></label></div><table cellpadding="0" cellspacing="0" border="0" class="display dataTable" id="list_view_table" aria-describedby="list_view_table_info">
+        <thead>
+            <tr id="list_view_header" role="row"><th id="lvh0" width="60" class="sorting" role="columnheader" tabindex="0" aria-controls="list_view_table" rowspan="1" colspan="1" style="width: 60px;" aria-label="Source: activate to sort column ascending">Source</th><th id="lvh1" width="70" class="sorting_desc" role="columnheader" tabindex="0" aria-controls="list_view_table" rowspan="1" colspan="1" style="width: 70px;" aria-sort="descending" aria-label="Date: activate to sort column ascending">Date</th><th id="lvh2" width="200" class="sorting" role="columnheader" tabindex="0" aria-controls="list_view_table" rowspan="1" colspan="1" style="width: 200px;" aria-label="Summary: activate to sort column ascending">Summary</th><th id="lvh3" width="100" class="sorting" role="columnheader" tabindex="0" aria-controls="list_view_table" rowspan="1" colspan="1" style="width: 100px;" aria-label="Disease: activate to sort column ascending">Disease</th><th id="lvh4" width="100" class="sorting" role="columnheader" tabindex="0" aria-controls="list_view_table" rowspan="1" colspan="1" style="width: 100px;" aria-label="Location: activate to sort column ascending">Location</th><th id="lvh5" width="95" class="sorting" role="columnheader" tabindex="0" aria-controls="list_view_table" rowspan="1" colspan="1" style="width: 95px;" aria-label="Species: activate to sort column ascending">Species</th><th id="lvh6" width="60" class="sorting" role="columnheader" tabindex="0" aria-controls="list_view_table" rowspan="1" colspan="1" style="width: 60px;" aria-label="Cases: activate to sort column ascending">Cases</th><th id="lvh7" width="60" class="sorting" role="columnheader" tabindex="0" aria-controls="list_view_table" rowspan="1" colspan="1" style="width: 60px;" aria-label="Deaths: activate to sort column ascending">Deaths</th><th id="lvh8" width="95" class="sorting" role="columnheader" tabindex="0" aria-controls="list_view_table" rowspan="1" colspan="1" style="width: 95px;" aria-label="Significance: activate to sort column ascending">Significance</th></tr>
+        </thead>
+        
+    <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd"><td valign="top" colspan="9" class="dataTables_empty">No data available in table</td></tr></tbody></table><div class="dataTables_info" id="list_view_table_info">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_full_numbers" id="list_view_table_paginate"><a tabindex="0" class="first paginate_button paginate_button_disabled" id="list_view_table_first"></a><a tabindex="0" class="previous paginate_button paginate_button_disabled" id="list_view_table_previous"></a><span></span><a tabindex="0" class="next paginate_button paginate_button_disabled" id="list_view_table_next"></a><a tabindex="0" class="last paginate_button paginate_button_disabled" id="list_view_table_last"></a></div></div>
+    </section><!--list_view-->
+
+<!-- START: SHOW SETTINGS
+........................................ -->
+<section id="settings_block" class="mi_popup ui-draggable">
+<span id="close_settings" class="close_icons"><img src="a_data/cl.png" alt="close"></span>
+<div id="settings_content" class="map_icons_content">
+<div class="drag_container">
+<header>Settings</header>
+<section class="mi_content">
+<h6>Map Style</h6>
+<span class="mapstyle">
+<input type="checkbox" value="hmstylelabels" id="showlabels" name="showlabels"><label for="showlabels">Show labels</label> <input type="checkbox" value="hmstylecontrast" id="highcontrast" name="highcontrast"><label for="highcontrast">High contrast</label>
+</span>
+<br><br>
+<h6>Marker Style</h6>
+<span class="markerstyle">
+<input type="radio" value="clustered" id="clustered" name="markerstyle"><label for="clustered"> Clustered</label> <input type="radio" value="individual" id="individual" name="markerstyle" checked="checked"><label for="individual"> Individual</label>
+</span>
+<br><br>
+<h6>Interface Language</h6><select id="langform" name="lang"><option value="en" selected="selected">English</option><option value="es">Español</option><option value="fr">Français</option><option value="pt">Português</option><option value="ru">Русский</option><option value="zh">中文</option><option value="ar">العربية</option></select><br><br>
+<h6>Change your default location</h6>
+<input type="text" id="location_change" name="location_change">
+<!--
+<select id="radius_change" name="radius_change">
+<option value="10">10 mile radius</option>
+<option value="50">50 mile radius</option>
+</select>
+-->
+<input type="button" class="submit" id="submit_location" value="change">
+<span class="hide" id="email_alerts"><h6>Email Alerts</h6>
+Visit <a href="https://www.healthmap.org/admin/profile.php">your profile page</a> to set up email alerts.</span>
+</section>
+</div><!--drag_container-->
+</div><!--settings_content-->
+</section><!--settings-->
+
+<!-- ........................................
+END: SHOW SETTINGS -->
+
+<!-- START: SHOW LOCAL
+........................................ -->
+<section id="local_block" class="mi_popup ui-draggable">
+<span id="close_local" class="close_icons"><img src="a_data/cl.png" alt="close"></span>
+<div id="local_content" class="map_icons_content">
+<div class="drag_container">
+<header><span id="onm_title">Outbreaks Near Me</span> <a class="inline" href="#dis_cat"><sup><i class="icon-info-sign"></i></sup></a></header>
+<a id="subscribe" class="highlightlink" href="javascript:;">Sign up for email alerts <i class="icon-envelope-alt"></i></a>
+<!-- a class="highlightlink" id="ebolamap" href="../zika">Zika outbreak <i class="icon-circle-arrow-right"></i></a -->
+<a class="highlightlink" id="ebolamap" href="https://www.healthmap.org/en/?d=304">COVID-19 Outbreak News <i class="icon-circle-arrow-right"></i></a>
+<a class="highlightlink" id="ebolamap" href="https://www.healthmap.org/covid-19">COVID-19 Case Counts <i class="icon-circle-arrow-right"></i></a>
+<a class="highlightlink" id="flucastsite" href="https://www.healthmap.org/flutrends" style="display: none;">United States Flu Trends <i class="icon-circle-arrow-right"></i></a>
+<section id="trends_near_you" class="mi_content">
+</section>
+
+<div class="hide">
+<section id="dis_cat" class="mi_info">
+<h5>Disease Categories</h5>
+<p>Twelve disease categories are used to help you quickly find what 
+you're looking for within your local area. Most of the categories refer 
+to where the disease affects your body, such as Gastrointestinal for 
+cholera or Respiratory for pneumonia. We also keep track of 
+environmental risks (i.e. beach closures due to sewage) and animal 
+diseases (i.e. foxes found with rabies) to provide you a broader picture
+ of diseases in your area.</p>
+<p>The number of alerts in each category determines the order in which 
+they appear in the Outbreaks Near Me section. The category with the 
+greatest number of alerts appears first. Categories that have no alerts 
+in your area are not displayed.</p>
+
+<div class="dis_cat_popup">
+    <div class="dis_icon">
+        <img src="a_data/60.png" alt="Animal Alerts">
+    </div>
+    <div class="dis_list">
+        <h5>Animal</h5>
+        Diseases affecting domestic animals, livestock, and wildlife.
+    </div>
+</div>
+
+<div class="dis_cat_popup">
+    <div class="dis_icon">
+        <img src="a_data/61.png" alt="Environmental Alerts">
+    </div>
+    <div class="dis_list">
+        <h5>Environmental</h5>
+        Changes in the environment that may impact human health (natural/man-made disaster, heat wave, volcanic eruption).
+    </div>
+</div>
+
+<div class="dis_cat_popup">
+    <div class="dis_icon">
+        <img src="a_data/62.png" alt="Fever Alerts">
+    </div>
+    <div class="dis_list">
+        <h5>Fever/Febrile</h5>
+        Diseases characterized by a high body temperature (fever).
+    </div>
+</div>
+
+<div class="dis_cat_popup">
+    <div class="dis_icon">
+        <img src="a_data/63.png" alt="Gastrointestinal Alerts">
+    </div>
+    <div class="dis_list">
+        <h5>Gastrointestinal</h5>
+        Diseases causing vomiting, diarrhea, or abdominal cramping.
+    </div>
+</div>
+
+<div class="dis_cat_popup">
+    <div class="dis_icon">
+        <img src="a_data/64.png" alt="Hemorrhagic Alerts">
+    </div>
+    <div class="dis_list">
+        <h5>Hemorrhagic</h5>
+        Diseases causing severe bleeding.
+    </div>
+</div>
+
+<div class="dis_cat_popup">
+    <div class="dis_icon">
+        <img src="a_data/65.png" alt="Hospital Acquired Infection">
+    </div>
+    <div class="dis_list">
+        <h5>Hospital Acquired Infection</h5>
+        Diseases contracted or primarily spread in health care settings (i.e. hospitals, nursing homes, etc.).
+    </div>
+</div>
+
+<div class="dis_cat_popup">
+    <div class="dis_icon">
+        <img src="a_data/66.png" alt="Neurologic Alerts">
+    </div>
+    <div class="dis_list">
+        <h5>Neurologic</h5>
+        Diseases affecting the nervous system (i.e. brain, spinal cord, or nerves).
+    </div>
+</div>
+
+<div class="dis_cat_popup">
+    <div class="dis_icon">
+        <img src="a_data/67.png" alt="Other Alerts">
+    </div>
+    <div class="dis_list">
+        <h5>Other</h5>
+        Undiagnosed diseases, diseases affecting plants/crops, chronic 
+or parasitic diseases, including those that produce vague symptoms.
+    </div>
+</div>
+
+<div class="dis_cat_popup">
+    <div class="dis_icon">
+        <img src="a_data/68.png" alt="Respiratory Alerts">
+    </div>
+    <div class="dis_list">
+        <h5>Respiratory</h5>
+        Diseases primarily causing symptoms such as cough, congestion, difficulty breathing, etc.
+    </div>
+</div>
+
+<div class="dis_cat_popup">
+    <div class="dis_icon">
+        <img src="a_data/69.png" alt="Skin/Rash Alerts">
+    </div>
+    <div class="dis_list">
+        <h5>Skin/Rash</h5>
+        Diseases primarily affecting the skin or that produce a rash.<br><br><br>
+    </div>
+</div>
+
+<div class="dis_cat_popup">
+    <div class="dis_icon">
+        <img src="a_data/70.png" alt="STD Alerts">
+    </div>
+    <div class="dis_list">
+        <h5>STD</h5>
+        Diseases that are associated with or primarily spread through sexual contact.
+    </div>
+</div>
+
+<div class="dis_cat_popup">
+    <div class="dis_icon">
+        <img src="a_data/71.png" alt="Vectorborne Alerts">
+    </div>
+    <div class="dis_list">
+        <h5>Vectorborne</h5>
+        Diseases transmitted to people or animals by arthropods including mosquitoes, ticks, flies, and fleas.
+    </div>
+</div>
+</section>
+</div>
+
+</div><!--drag_container-->
+</div><!--local_content-->
+</section><!--local-->
+
+<!-- ........................................
+END: SHOW LOCAL -->
+
+<!-- START: SHOW LEGEND
+........................................ -->
+<section id="legend_block" class="mi_popup ui-draggable">
+<span id="close_legend" class="close_icons"><img src="a_data/cl.png" alt="close"></span>
+<div id="legend_content" class="map_icons_content">
+<div class="drag_container">
+<header>Activity Index <a class="inline" href="#ai_info"><sup><i class="icon-info-sign"></i></sup></a></header>
+<section id="activity_index" class="mi_content">
+<div class="p"><span class="l">Low</span><span class="r">High</span></div><table><tbody><tr><td><img src="a_data/l1.png" alt="pin"></td><td><img src="a_data/l2.png" alt="pin"></td><td><img src="a_data/l3.png" alt="pin"></td><td><img src="a_data/l4.png" alt="pin"></td><td><img src="a_data/l5.png" alt="pin"></td><td>Country</td></tr><tr><td><img src="a_data/s1.png" alt="pin"></td><td><img src="a_data/s2.png" alt="pin"></td><td><img src="a_data/s3.png" alt="pin"></td><td><img src="a_data/s4.png" alt="pin"></td><td><img src="a_data/s5.png" alt="pin"></td><td>Local</td></tr></tbody></table><div class="hide"><section id="ai_info" class="mi_info"><h5>Marker Color</h5><p>Marker
+ color reflects the noteworthiness of events at a particular location 
+during a given time window. An event's degree of noteworthiness is based
+ on the significance rating of the alert provided by HealthMap users. In
+ the absence of user ratings, the system assigns a composite score based
+ on the disease importance and the news volume associated with the 
+alert. If a location's marker has multiple alerts, the color associated 
+with the most prominent alert is used.</p><h5>Marker Size</h5><p>The large circle indicates a country-level alert, while state, province and local alerts are indicated by the small circle.</p></section></div></section>
+
+</div><!--drag_container-->
+</div><!--legend_content-->
+</section><!--legend-->
+
+<!-- ........................................
+END: SHOW LEGEND -->
+
+<!-- START: KML
+........................................ -->
+
+<section id="kml_block" class="mi_popup ui-draggable">
+<span id="close_kml" class="close_icons"><img src="a_data/cl.png" alt="close"></span>
+<div id="kml_content" class="map_icons_content">
+<div class="drag_container">
+<header>Map Layers</header>
+<section class="mi_content">
+<div id="toggle_box"></div>
+</section>
+</div></div>
+</section><!--kml_block-->
+
+<!-- ........................................
+END: KML -->
+
+<section id="top">
+<div class="container">
+<i id="show_search" class="active togglesearch icon-search" data-hasqtip="true" oldtitle="Search" title=""></i>
+<i id="show_views" class="togglesearch icon-folder-close" data-hasqtip="true" oldtitle="Saved Searches" title=""></i>
+<span id="selected_search">
+<span id="numalerts"></span>
+<span id="selected_qv"></span>
+<ul id="search">
+<li id="diseases" class="top_sentence"><span id="num_ns_diseases"></span> Disease<span id="diseases_plural">s</span><i class="icon-caret-down"></i></li>
+<li id="locations" class="top_sentence"><span id="num_ns_locations"></span> Location<span id="locations_plural">s</span><i class="icon-caret-down"></i></li>
+<li id="dates" class="top_sentence"><span id="timeinterval"></span><i class="icon-caret-down"></i></li>
+</ul>
+</span>
+
+<section id="map_icons">
+    <i onclick="_gaq.push(['_trackEvent', 'hm Map Icon Clicked', 'Add Alert Clicked']);" id="add_container" class="icon-plus-sign" data-hasqtip="true" oldtitle="add alerts" title=""></i>
+            <i onclick="_gaq.push(['_trackEvent', 'hm Map Icon Clicked', 'Outbreaks Near Me Clicked']);" id="local_container" class="icon-map-marker" data-hasqtip="true" oldtitle="outbreaks near me" title=""></i>
+        <!-- feedback icon, moved to footer   <i id="feedback_container" title="feedback" class="icon-envelope"></i> -->
+    
+    <i onclick="_gaq.push(['_trackEvent', 'hm Map Icon Clicked', 'Map Settings Clicked']);" id="settings_container" class="icon-cogs" data-hasqtip="true" oldtitle="Settings" title=""></i>
+    <i onclick="_gaq.push(['_trackEvent', 'hm Map Icon Clicked', 'Legend Clicked']);" id="legend_container" class="icon-key" data-hasqtip="true" oldtitle="Legend" title=""></i>
+</section><!--map_icons-->
+
+<div id="display">
+<i onclick="_gaq.push(['_trackEvent', 'hm Map Icon Clicked', 'Download Clicked']);" id="download" class="icon-download-alt" style="display: none;" data-hasqtip="true" oldtitle="download map in csv format" title=""></i>
+<i onclick="_gaq.push(['_trackEvent', 'hm Map Icon Clicked', 'List View Clicked']);" id="list" class="icon-list" data-hasqtip="true" oldtitle="List view" title=""></i>
+<i onclick="_gaq.push(['_trackEvent', 'hm Map Icon Clicked', 'Time Series Clicked']);" id="trends" class="icon-bar-chart" data-hasqtip="true" oldtitle="Time series" title=""></i>
+</div><!--display-->
+
+
+</div><!--container-->
+</section><!--top-->
+
+<!-- START: SEARCH ALERTS
+........................................ -->
+
+<span id="close_search"><img src="a_data/cl.png" alt="close"></span>
+<div id="search_dropdown">
+<header class="active" id="show_search_drop"><i class="icon-search"></i> <span>Search</span></header>
+<header id="show_views_drop"><i class="icon-folder-close"></i> <span>Saved Searches</span></header>
+<div id="show_search_dropdown_options">
+    <form class="infield" id="saveview" style="display: none;">
+        <span id="save_search_choice">Save search</span>
+        <!-- <span id="setasdefault"><input name="default" type="checkbox" value="1"><label>Set as default view</label></span> -->
+        <p><label for="viewn">Name</label><input name="viewn" id="viewn" type="text" maxlenght="30"></p>
+        <p><label for="viewd">Description</label><input id="viewd" name="viewd" type="text"></p>
+        <input type="submit" class="submit submitsearch" value="save">
+    </form>
+<span id="choosecat">
+        <input name="category" type="checkbox" value="1" checked="checked"><label>New &amp; Ongoing Outbreaks</label>&nbsp;&nbsp;&nbsp;
+        <input name="category" type="checkbox" value="2" checked="checked"><label>Warnings</label>&nbsp;&nbsp;&nbsp;
+        <input name="category" type="checkbox" value="29" checked="checked"><label>International Significance</label></span>
+
+<span id="advanced_search">
+<h6 id="diseases_drop">Diseases <span id="num_bar_diseases"></span><i class="icon-caret-down"></i></h6>
+<div id="diseases_dropdown" class="search_dropdown_cat">
+<span class="block"><input type="radio" class="searchbox_type" value="all" name="diseases_search"><label class="all">All diseases</label></span>
+<span class="block"><input type="radio" class="searchbox_type" value="pick" name="diseases_search"><input type="text" id="diseases_searchbox" class="searchbox ui-autocomplete-input" placeholder="Choose diseases" autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span></span>
+<div id="selected_diseases" class="pickinput"></div>
+</div><!--diseases_dropdown-->
+<h6 id="locations_drop">Location <span id="num_bar_locations"></span><i class="icon-caret-down"></i></h6>
+<div id="locations_dropdown" class="search_dropdown_cat">
+<span class="block"><input type="radio" class="searchbox_type" value="current" name="locations_search" id="currentlocation"><label class="all">Your Location<span id="locname">: 5-5-1046, HIndi Nagar, Ghosha Mahal North, Nampally, Hyderabad, Telangana 500001, India</span></label> <span class="editloc">[change]</span></span>
+<span class="block"><input type="radio" class="searchbox_type" value="all" name="locations_search"><label class="all">All locations</label></span>
+<span class="block"><input type="radio" class="searchbox_type" value="precise" name="locations_search"><input type="text" id="places_searchbox" class="searchbox_type" name="locations_search" placeholder="Choose a precise location"></span>
+<span class="block"><input type="radio" class="searchbox_type" value="pick" name="locations_search"><input type="text" id="locations_searchbox" class="searchbox ui-autocomplete-input" placeholder="Choose countries" autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span></span>
+<div id="selected_locations" class="pickinput"></div>
+</div><!--locations_dropdown-->
+<h6 id="sources_drop">Source <span id="num_bar_sources"></span><i class="icon-caret-down"></i></h6>
+<div id="sources_dropdown" class="search_dropdown_cat">
+<span class="block"><input type="radio" class="searchbox_type" value="all" name="sources_search"><label class="all">All sources</label></span>
+<span class="block"><input type="radio" class="searchbox_type" value="pick" name="sources_search"><input type="text" id="sources_searchbox" class="searchbox ui-autocomplete-input" placeholder="Choose sources" autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span></span>
+<div id="selected_sources" class="pickinput"></div>
+</div><!--sources_dropdown-->
+<h6 id="species_drop">Species <span id="num_bar_species"></span><i class="icon-caret-down"></i></h6>
+<div id="species_dropdown" class="search_dropdown_cat">
+<span class="block"><input type="radio" class="searchbox_type" value="all" name="species_search"><label class="all">All species</label></span>
+<span class="block"><input type="radio" class="searchbox_type" value="pick" name="species_search"><input type="text" id="species_searchbox" class="searchbox ui-autocomplete-input" placeholder="Choose species" autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span></span>
+<div id="selected_species" class="pickinput"></div>
+</div><!--species_dropdown-->
+</span>
+
+<h6 id="dates_drop">Date<i class="icon-caret-down"></i></h6>
+<div id="dates_dropdown" class="dates search_dropdown_cat">
+<input type="radio" id="datechoice1" name="datechoice" value="recent" checked="checked">
+<select name="time_interval" id="time_interval">
+<option value="" selected="selected"></option><option value="1 day">today</option><option value="2 days">past 2 days</option><option value="3 days">past 3 days</option><option value="4 days">past 4 days</option><option value="5 days">past 5 days</option><option value="6 days">past 6 days</option><option value="1 week">past week</option><option value="2 weeks">past 2 weeks</option><option value="3 weeks">past 3 weeks</option><option value="1 month">past month</option></select>
+<input type="radio" id="datechoice2" name="datechoice" value="daterange">
+<label>from:</label> <input name="date1" id="date1" size="14" class="datepicker hasDatepicker">
+<label>to:</label> <input name="date2" id="date2" size="14" class="datepicker hasDatepicker">
+</div><!--dates_dropdown-->
+<input type="submit" id="submit_search" class="submit submitsearch" value="submit search">
+</div><!--search_dropdown_options-->
+<!-- START: SHOW VIEWS
+........................................ -->
+
+<div id="show_views_dropdown_options" class="views search_dropdown_cat">
+
+<section id="views_block">
+
+    <section class="qv_choices">
+        <ul id="presetlist">
+        <li class="qv active hm" id="qv_1"><span class="edit_preset"><i id="qtip-1" class="icon-edit"></i><i id="qtip-1" class="icon-trash" title="Alerts from past week"></i></span><div><span tooltip="Default view: Alerts from past week" class="qvtitle"><i class="icon-home"></i>Alerts from past week</span></div></li>
+<li class="qv hm" id="qv_349"><span class="edit_preset"><i id="qtip-349" class="icon-edit"></i><i id="qtip-349" class="icon-trash" title="Coronavirus Surveillance"></i></span><div><span tooltip="Coronavirus alerts in the past year" class="qvtitle">Coronavirus Surveillance</span></div></li>
+<li class="qv hm" id="qv_336"><span class="edit_preset"><i id="qtip-336" class="icon-edit"></i><i id="qtip-336" class="icon-trash" title="Ebola Outbreak 2012"></i></span><div><span tooltip="Ebola in Uganda with view of surrounding countries" class="qvtitle">Ebola Outbreak 2012</span></div></li>
+<li class="qv hm" id="qv_268"><span class="edit_preset"><i id="qtip-268" class="icon-edit"></i><i id="qtip-268" class="icon-trash" title="Avian Influenza (past month)"></i></span><div><span tooltip="All Avian Influenza alerts from the past month" class="qvtitle">Avian Influenza (past month)</span></div></li>
+<li class="qv hm" id="qv_212"><span class="edit_preset"><i id="qtip-212" class="icon-edit"></i><i id="qtip-212" class="icon-trash" title="Measles - Past Month"></i></span><div><span tooltip="A global view of measles alerts for past month" class="qvtitle">Measles - Past Month</span></div></li>
+<li class="qv hm" id="qv_3"><span class="edit_preset"><i id="qtip-3" class="icon-edit"></i><i id="qtip-3" class="icon-trash" title="User Submitted Reports"></i></span><div><span tooltip="" class="qvtitle">User Submitted Reports</span></div></li>
+<li class="qv hm" id="qv_4"><span class="edit_preset"><i id="qtip-4" class="icon-edit"></i><i id="qtip-4" class="icon-trash" title="Highest Rated"></i></span><div><span tooltip="" class="qvtitle">Highest Rated</span></div></li>
+<li class="qv hm" id="qv_94"><span class="edit_preset"><i id="qtip-94" class="icon-edit"></i><i id="qtip-94" class="icon-trash" title="Warnings"></i></span><div><span tooltip="Infectious Disease Warnings" class="qvtitle">Warnings</span></div></li>
+<li class="qv hm" id="qv_2"><span class="edit_preset"><i id="qtip-2" class="icon-edit"></i><i id="qtip-2" class="icon-trash" title="Worldwide Alerts"></i></span><div><span tooltip="" class="qvtitle">Worldwide Alerts</span></div></li>
+        </ul>
+    </section>
+
+</section><!--views_block-->
+</div><!--views_dropdown-->
+<!-- ........................................
+END: SHOW VIEWS -->
+
+</div><!--search_dropdown-->
+<!-- ........................................
+END: SEARCH ALERTS -->
+
+<section id="navigation">
+<a id="home" href="https://www.healthmap.org/en/index.php" class="home_hm"><img id="hm_logo" src="a_data/mainlogo.png" alt="Logo"></a>
+<ul id="primary_nav">
+<li><a onclick="_gaq.push(['_trackEvent', 'HM Navigation Clicked', 'About']);" href="http://www.diseasedaily.org/about">About</a></li><li><a onclick="_gaq.push(['_trackEvent', 'HM Navigation Clicked', 'Projects']);" href="https://compepi.org/projects/">Projects</a></li><li><a onclick="_gaq.push(['_trackEvent', 'HM Navigation Clicked', 'Disease Daily']);" href="https://www.diseasedaily.org/">Disease Daily</a></li><li><a onclick="_gaq.push(['_trackEvent', 'HM Navigation Clicked', 'Feedback']);" href="https://www.healthmap.org//forms/feedback.php" title="Feedback" class="iframesm"><i class="icon-envelope-alt"></i></a></li><li><a rel="nofollow" onclick="_gaq.push(['_trackEvent', 'HM Navigation Clicked', 'Facebook']);" href="http://facebook.com/healthmap"><i class="icon-facebook"></i></a></li><li><a rel="nofollow" onclick="_gaq.push(['_trackEvent', 'HM Navigation Clicked', 'Twitter']);" href="http://twitter.com/healthmap"><i class="icon-twitter"></i></a></li></ul>
+
+<ul id="secondary_nav">
+
+ 
+<li id="loginsection"><a href="https://www.healthmap.org/forms/login.html">Log In</a></li>
+
+<li><a target="_blank" rel="nofollow" href="http://www.childrenshospital.org/"><img src="a_data/chb.png" alt="Children's Hospital"></a></li>
+<li><a href="http://hms.harvard.edu/" rel="nofollow" target="_blank"><img src="a_data/hms.png" alt="Harvard Medical School"></a></li>
+</ul>
+</section><!--navigation-->
+
+</div><!--page-->
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><div class="fancybox-overlay fancybox-overlay-fixed" style="width: auto; height: auto; background: rgba(0, 0, 0, 0.2); display: block;"><div class="fancybox-wrap fancybox-desktop fancybox-type-iframe fancybox-opened" tabindex="-1" style="width: 530px; height: auto; position: absolute; top: 106px; left: 20px; opacity: 1; overflow: visible;"><div class="fancybox-skin" style="padding: 0px; width: auto; height: auto;"><div class="fancybox-outer"><div class="fancybox-inner" style="overflow: auto; width: 530px; height: 277px;"><iframe id="fancybox-frame1726689612633" name="fancybox-frame1726689612633" class="fancybox-iframe" frameborder="0" vspace="0" hspace="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" scrolling="auto" src="a_data/27433633.html"></iframe></div></div><a title="Close" class="fancybox-item fancybox-close" href="javascript:;"></a></div></div></div><ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="z-index: 521; display: none;"></ul><ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-2" tabindex="0" style="z-index: 521; display: none;"></ul><ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-3" tabindex="0" style="z-index: 521; display: none;"></ul><ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-4" tabindex="0" style="z-index: 521; display: none;"></ul></body></html>
