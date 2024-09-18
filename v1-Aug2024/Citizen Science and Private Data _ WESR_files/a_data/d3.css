@@ -1,0 +1,69 @@
+#chart_info {
+    width: auto;
+    margin-left: 0px;
+    text-align: center;
+    }
+
+#chart {
+    padding-right: 0px;
+    }
+
+#trends_view header {
+    margin: 0px;
+    }
+
+#chart_div {
+    padding-top: 0px;
+    }
+
+#trends_content {
+    width: 90%;
+    }
+
+#trends_view {
+    padding: 0px;
+    }
+
+.axis path,.axis line {
+    fill: none;
+    stroke: #999;
+    shape-rendering: crispEdges;
+    }
+
+.line {
+    fill: transparent;
+    fill: none;
+    stroke-width: 3px;
+    }
+
+.names {
+    display: none;
+    font-size: .83em;
+   }
+
+.country:hover .names {
+    display: block;
+    }
+
+.country {
+    opacity: 0.3;
+    }
+
+.country:hover {
+    opacity:1;
+    }
+
+#d3menu {
+    position: absolute;
+    text-align: left;
+    margin: -20px 0 0 130px;
+    }
+
+text {
+    fill: #333;
+    }
+
+svg {
+    max-width: 100%;
+    padding-right: 200px;
+    }
