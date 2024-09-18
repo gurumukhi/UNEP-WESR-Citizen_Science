@@ -1,2 +1,6 @@
 * First backup files are available in wesr-cs-backup-1.zip
 * Working files in the WESR-CS-html-files folder
+
+Images uploaded (https://staging7.unep.org/wesr/web/admin/content/media)
+1. https://staging7.unep.org/wesr/web/media/1068 - Remote sensing
+2. https://staging7.unep.org/wesr/web/media/1069 - Warming_stripes.png

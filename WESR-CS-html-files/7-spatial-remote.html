@@ -1,0 +1,353 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+    #spatial {
+        height: auto;
+        background-color: white;
+    }
+
+    .head-spatial {
+        background-image: url("/wesr/web/sites/default/files/2024-09/remote-sensing.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 450px;
+    }
+
+    hr.rounded-water {
+        border-top: 3px solid #00abf1;
+        border-radius: 3px;
+    }
+
+    .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+    }
+
+    .row {
+        margin: 0 -5px;
+    }
+
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .top-paragraph {}
+
+    .hiden-paragraph {
+        display: none;
+    }
+
+    .see-more-btn {
+        background-color: #00abf1;
+        color: white;
+    }
+
+    b,
+    span {
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .head-spatial {
+            background-image: url("/wesr/web/sites/default/files/2024-09/remote-sensing.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 350px;
+            object-fit: center;
+            height: 300px;
+        }
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        background-color: #ffff;
+    }
+</style>
+<div id="spatial-remote">
+    <div class="head-spatial">
+        <h2>&nbsp;</h2>
+
+        <h2 style="color:white; font-size:28px;padding:40px;">Remote Sensing and Mapping</h2>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="https://cartodb.com/" target="_blank">CartoDB</a>
+                </h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">This is an online mapping software that
+                    uses visualization, collaboration, and analysis <b class="see-more-btn"
+                        onclick="evtEllipse(this)">…</b> <span class="hiden-paragraph" onclick="spanEllipse(this)">to
+                        present citizen science data
+                        in a simple and
+                        beautiful web interface. It offers dynamic rendering and geo-temporal
+                        visualizations of real-time maps that show data as it happens. The strength of the platform is
+                        in enabling users to easily implement analytically robust data driven solutions. Showcased below
+                        are a few examples of maps in action. More examples of maps developed using CartoDB can be found
+                        here <a href="https://cartodb.com/" target="_blank">see more...</a></span></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="http://data.globalforestwatch.org/"
+                        target="_blank">Global Forest Watch Open Data Portal</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">Includes forest change, forest cover,
+                    forest use, conservation and people data. <b class="see-more-btn" onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)"> <a
+                            href="http://data.globalforestwatch.org/" target="_blank">see more...</a></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="https://tapla-carte.gogocarto.fr/"
+                        target="_blank">TAPLA</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">TAPLA (Terrains d'aventure du passé/pour
+                    l'avenir) research group, supported by the <b class="see-more-btn" onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">Labex Les passés dans le present (Nanterre
+                        University,
+                        France) focuse on bulding a collaborative map is to document the sites of the past and present,
+                        as
+                        well as those that were planned but never existed. The map is based on research in the archives.
+                        The
+                        map is therefore based on a guide to archive sources, which members of the public are invited to
+                        consult if they wish to visit the archive services listed to carry out further research and
+                        provide
+                        the map with additional information and/or reproductions of documents
+                        https://tapla.hypotheses.org/328. This map lists the adventure playgrounds that exist or have
+                        existed around the world since they first appeared in the 1940s. It gives their location and
+                        date of
+                        creation and, for some of them, provides multimedia documentation. <a
+                            href="https://tapla-carte.gogocarto.fr/" target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a
+                        href="https://www.geopedia.world/?locale=sl#T281_L2518_x1709131.9524565407_y5766409.413833694_s9_b362"
+                        target="_blank">Geopedia</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">Partisan memorial is a general term for
+                    memorial plaques, obelisks, monuments, statues and <b class="see-more-btn"
+                        onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">similar objects erected after World War II
+                        to
+                        commemorate fallen partisans and hostages shot. They appear at various sites: at the site of
+                        battles, partisan camps, the occupier's prisons, at the sites of the occupier's terror, at
+                        illegal
+                        hospitals, at courier stations and gateways, at meetings, and at other historical events during
+                        the
+                        Second World War. <a
+                            href="https://www.geopedia.world/?locale=sl#T281_L2518_x1709131.9524565407_y5766409.413833694_s9_b362"
+                            target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="https://colouring.dresden.ioer.info/"
+                        target="_blank">Colouring Dresden</a>
+                </h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">Coloring Drresden aims to collect
+                    information on Dresden's buildings in an open digital platform <b class="see-more-btn"
+                        onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">together with the
+                        population and thus
+                        make it visible and usable in maps. Together with the citizens, research questions have already
+                        been
+                        found and prioritized. <a href="https://colouring.dresden.ioer.info/" target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="https://healthsites.io/" target="_blank">The
+                        Global Healthsites Mapping</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">The Global Healthsites Mapping Project is
+                    building an open data commons of health facility data <b class="see-more-btn"
+                        onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">with OpenStreetMap. It is based on the
+                        methods
+                        and infrastructure of OpenStreetMap, baseline health facility data can be maintained. <a
+                            href="https://healthsites.io/" target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="https://opensourcesoundscapes.org/"
+                        target="_blank">Hush City</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">Hush City is a free, citizen science app,
+                    which empowers people to identify and assess quiet areas <b class="see-more-btn"
+                        onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">in cities as to create an open-access,
+                        web-based map of quiet areas, with the potential of orientating plans and policies for healthier
+                        living, in response to issues framed by European environmental policies (e.g. EC END 49/2002).
+                        Launched in 2017 within the context of a pilot study in Berlin, Hush City is now used
+                        internationally and available in 5 languages: English, German, Italian, Spanish and Portuguese.
+                        Hush City has been adopted by the Municipalities of Berlin (2018) and Limerick (2020-2022) for
+                        the
+                        creation of the Plans of Quiet Areas. <a href="https://opensourcesoundscapes.org/"
+                            target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a
+                        href="https://www.spotteron.net/citizen-science-app-features/iframe-maps"
+                        target="_blank">Spotteron Interactive Maps</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">This web-app allows Citizen Scientists to
+                    enter data simply via a browser on their laptop or <b class="see-more-btn"
+                        onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">desktop computer and offers all key
+                        features of
+                        the smartphone apps, including the Citizen Science community.
+                        The interactive map can be easily embedded in every website with an iframe HTML code, and allows
+                        data submission via laptop or desktop computer, offering a fullscreen experience for visitors
+                        and
+                        participants. The map comes with all the features and extensions, which also are available the
+                        smartphone apps, including all the community tools like comments, hearts (likes), top spots and
+                        much
+                        more. <a href="https://www.spotteron.net/citizen-science-app-features/iframe-maps"
+                            target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a
+                        href="https://www.creaf.cat/harmonizing-remote-sensing-and-citizen-science-vegetation-phenology-observations"
+                        target="_blank">PhenoTandem</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">Pheno Tandem harmonises the remote sensing
+                    approach to vegetation phenology with the traditional citizen science <b class="see-more-btn"
+                        onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">phenological observations.
+                        This goal can be achieved by developing the following objectives: a) Make Citizen Science and
+                        Remote
+                        Sensing Phenology monitoring interoperable, b) Improve and encourage the capture of phenology
+                        data
+                        through Citizen Science, c) Achieve agreement on phenology protocols among multiple
+                        stakeholders, d)
+                        Increase application of high resolution high level products from remote sensing. <a
+                            href="https://www.creaf.cat/harmonizing-remote-sensing-and-citizen-science-vegetation-phenology-observations"
+                            target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a
+                        href="https://theoceancleanup.com/research/citizen-science/citizen-science-map/"
+                        target="_blank">The Ocean Clean Up</a>
+                </h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">"The Citizen Science map displays real-time
+                    data delivered by citizen scientists using The Ocean Cleanup Survey App <b class="see-more-btn"
+                        onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">(Android | iOS).
+                        To solve the ocean plastic pollution problem, The Ocean Cleanup deploys ocean cleanup systems as
+                        well as river interception devices. To refine our cleanup strategy and maximize the impact of
+                        our
+                        efforts, it is crucial that we have a deep understanding of the transport, accumulation, and
+                        composition of plastic pollution in the world’s water bodies.
+                        By zooming in on the clusters and clicking on individual survey dots, you can observe the
+                        results of
+                        our citizen science surveys. <a
+                            href="https://theoceancleanup.com/research/citizen-science/citizen-science-map/"
+                            target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a
+                        href="https://www.museumnext.com/article/citizen-science-mapping-project/"
+                        target="_blank">Traces of the Wall</a>
+                </h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">Mauerspuren (Traces of the Wall) is a
+                    map-based online research tool developed by the foundation to record traces of <b
+                        class="see-more-btn" onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">the Berlin Wall still
+                        visible today. People can not only use the map for research but take an active role in the
+                        documentary project by noting how relics and traces of the wall are changing. <a
+                            href="https://www.museumnext.com/article/citizen-science-mapping-project/"
+                            target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="https://www.citizensciencegis.org/"
+                        target="_blank">Citizen Science GIS</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">Citizen Science GIS make geospatial
+                    technologies for science more accessible and understandable by fostering <b class="see-more-btn"
+                        onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">relationships between
+                        communities and scientists, of all ages, across the globe. <a
+                            href="https://www.citizensciencegis.org/" target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<hr class="rounded-water" />
+<script>
+
+    function evtEllipse(info) {
+        info.nextElementSibling.classList.toggle('hiden-paragraph');
+        info.classList.toggle('hiden-paragraph');
+    }
+    function spanEllipse(info) {
+        info.classList.toggle('hiden-paragraph');
+        info.previousElementSibling.classList.toggle('hiden-paragraph')
+    }
+</script>

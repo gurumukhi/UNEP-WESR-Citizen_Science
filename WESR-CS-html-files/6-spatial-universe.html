@@ -1,0 +1,310 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+    #spatial {
+        height: auto;
+        background-color: white;
+    }
+
+    .head-universe {
+        background-image: url("/wesr/web/sites/default/files/inline-images/MTG%20-%20Meteosat%20Third%20Generation_V2_%20%C2%A9%20Thales%20Alenia%20Space_Master%20Image%20Programmes.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 550px;
+    }
+
+    hr.rounded-water {
+        border-top: 3px solid #00abf1;
+        border-radius: 3px;
+    }
+
+    .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+    }
+
+    .row {
+        margin: 0 -5px;
+    }
+
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .top-paragraph {}
+
+    .hiden-paragraph {
+        display: none;
+    }
+
+    .see-more-btn {
+        background-color: #00abf1;
+        color: white;
+    }
+
+    b,
+    span {
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .head-universe {
+            background-image: url("/wesr/web/sites/default/files/inline-images/MTG%20-%20Meteosat%20Third%20Generation_V2_%20%C2%A9%20Thales%20Alenia%20Space_Master%20Image%20Programmes.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            object-fit: center;
+            height: 300px;
+        }
+
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        background-color: #ffff;
+    }
+</style>
+<div id="spatial-universe">
+    <div class="head-universe">
+        <h2>&nbsp;</h2>
+
+        <h2 style="color:white; font-size:28px;padding:40px;">Exploring the Universe</h2>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="http://what3words.com/"
+                        target="_blank">What3words</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">This is a unique combination of just 3
+                    words that identifies a 3mx3m square, anywhere on the planet. It helps deliver business
+                    efficiencies, <b class="see-more-btn" onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">drive growth and help the social &amp;
+                        economic development of countries. Example of use: A UN-ASIGN application has been developed by
+                        AnsuR for crowd sourcing geo-tagged photos and text from areas affected by large humanitarian
+                        disasters to the United Nations entity UNITAR/UNOSAT. Download app iTunes or Android. <a
+                            href="http://what3words.com/" target="_blank">see more...</a></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a
+                        href="https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Space_for_Earth/Citizen_science"
+                        target="_blank">ESA citizen science</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">
+                    The European Space Agency (ESA) offers the opportunitu to work on real science withing various
+                    projects on space exploration <b class="see-more-btn" onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">-- from validation of satellites data to
+                        growing crops in space to
+                        interpret Mars images -- where the contribution of people is needed. The idea is to improve our
+                        understanding of comets, monitoring space weather, verifying images from Earth observation
+                        satellites, and much more. But the benefits go both ways: we hope that by opening up ESA data
+                        and
+                        tools to the public, we are improving the openness of our work, increasing citizen engagement in
+                        scientific research, and building stronger connections between science and society.
+                        <a href="https://www.esa.int/Enabling_Support/Preparing_for_the_Future/Space_for_Earth/Citizen_science"
+                            target="_blank">see more...</a></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="https://science.nasa.gov/citizen-science/"
+                        target="_blank">NASA citizen science</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">
+                    The NASA offers "citizen science" or "participatory science" projects, where volunteers and amateurs
+                    can help make <b class="see-more-btn" onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">important scientific discoveries. These
+                        29 projects are open to everyone around the
+                        world (it is interesting that they specify that "no citizenship required"). Content is available
+                        in
+                        11 languages.
+                        <a href="https://science.nasa.gov/citizen-science/" target="_blank">see more...</a></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a
+                        href="https://www.skao.int/en/resources/outreach-education/citizen-science" target="_blank">SKA
+                        Observatory</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">
+                    The SKA Observatory (anext-generation radio astronomy-driven big data facility) offers a list of
+                    citizen science <b class="see-more-btn" onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">projects that call on the public’s help to
+                        do research. Whether it’s recognising
+                        patterns or using your computer’s processing power while you’re not using it, you’ll be helping
+                        astronomers make sense of what’s out there.
+                        <a href="https://www.skao.int/en/resources/outreach-education/citizen-science"
+                            target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="https://frontiers-project.eu/"
+                        target="_blank">Frontiers</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">
+                    The FRONTIERS project is connected with Virgo, the facility to search for gravitaional waves, and
+                    brings together <b class="see-more-btn" onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">expertise from frontier scientific
+                        research and educational research in formal and
+                        informal science learning, along with user communities across Europe, in order to demonstrate
+                        how
+                        Nobel Prize winning science can be systematically integrated in the school curriculum.
+                        <a href="https://frontiers-project.eu/" target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a
+                        href="https://iau.org/public/themes/citizen-science-projects/" target="_blank">IAU citizen
+                        science</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">
+                    The Intenational Astronomical Union (IAU) opens up to the publics with a wide range of opprotunities
+                    -- take part in <b class="see-more-btn" onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">research, organise events, process images,
+                        help to support science projects,
+                        contribute to long-term observational studies.
+                        <a href="https://iau.org/public/themes/citizen-science-projects/" target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="https://exoplanets.nasa.gov/exoplanet-watch/"
+                        target="_blank">Exoplanet Watch</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">
+                    A NASA citizen science project, sponsored by NASA's Universe of Learning, to help anyone explore
+                    exoplanets at <b class="see-more-btn" onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">any level, from students to
+                        professionals. Participant can gather and analyze real
+                        exoplanet data, contribute your results to a NASA database, and get recognition for their
+                        work
+                        in scientific publications.
+                        <a href="https://exoplanets.nasa.gov/exoplanet-watch/" target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a
+                        href="https://projectescape.eu/services/citizen-science-cs" target="_blank">Escape</a></h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">
+                    The ESCAPE Citizen Science is an astronomy and astroparticle physics programme that allows the
+                    science-inclined <b class="see-more-btn" onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">
+                        public to take part in research projects to perform tasks that could not
+                        otherwise be solved algorithmically and that will contribute to making a wide varierty of
+                        fundamental scientific discoveries.
+                        <a href="https://projectescape.eu/services/citizen-science-cs" target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="row" style="margin-top:10px;">
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a href="https://universeh.eu/research/citizens-platform/"
+                        target="_blank">UNIVERSEH
+                    </a>
+                </h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">
+                    The UNIVERSEH platform aims to create a reciprocal relationship between citizens, students, and
+                    researchers to <b class="see-more-btn" onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">increase the public’s knowledge of space
+                        science, raise awareness of its chances and
+                        opportunities, and provide students and researchers with space science citizen-based knowledge.
+                        UNIVERSEH offers opportunities to participate and to contribute to space science by
+                        participating in
+                        a citizen science project.
+                        <a href="https://universeh.eu/research/citizens-platform/" target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <h3 style="font-size:14px;text-align:center;"><a
+                        href="https://www.zooniverse.org/projects/zookeeper/galaxy-zoo/" target="_blank">Galazy
+                        Zoo</a>
+                </h3>
+
+                <p class="top-paragraph" style="color:black;font-size:14px;">
+                    One of the oldest citizen science projects. For more than a decade, they've asked volunteers to
+                    help
+                    us explore galaxies near and far,
+                    <b class="see-more-btn" onclick="evtEllipse(this)">…</b>
+                    <span class="hiden-paragraph" onclick="spanEllipse(this)">
+                        sampling a fraction of the roughly one hundred billion that are
+                        scattered throughout the observable Universe. Each one of the systems, containing billions
+                        of
+                        stars,
+                        has had a unique life, interacting with its surroundings and with other galaxies in many
+                        different
+                        ways; the aim of the Galaxy Zoo team is to try and understand these processes, and to work
+                        out
+                        what
+                        galaxies can tell us about the past, present and future of the Universe as a whole.
+                        <a href="https://www.zooniverse.org/projects/zookeeper/galaxy-zoo/" target="_blank">see
+                            more...</a></span>
+                </p>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<hr class="rounded-water" />
+<script>
+
+    function evtEllipse(info) {
+        info.nextElementSibling.classList.toggle('hiden-paragraph');
+        info.classList.toggle('hiden-paragraph');
+    }
+    function spanEllipse(info) {
+        info.classList.toggle('hiden-paragraph');
+        info.previousElementSibling.classList.toggle('hiden-paragraph')
+    }
+</script>
