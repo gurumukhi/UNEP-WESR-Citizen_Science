@@ -4,3 +4,4 @@
 Images uploaded (https://staging7.unep.org/wesr/web/admin/content/media)
 1. https://staging7.unep.org/wesr/web/media/1068 - Remote sensing
 2. https://staging7.unep.org/wesr/web/media/1069 - Warming_stripes.png
+3. https://staging7.unep.org/wesr/web/media/1070 - /wesr/web/sites/default/files/2024-09/waste-right.png

@@ -1,6 +1,7 @@
 <style type="text/css">
     .cit-header {
-        background-image: url("/wesr/web/sites/default/files/inline-images/shutterstock_2140985473_2.jpg");
+        background-image: url("/wesr/web/sites/default/files/inline-images/shutterstock_2140985473_2.jpg"), linear-gradient(rgba(1, 171, 241, 0.5), rgba(1, 171, 241, 0.5));
+        background-blend-mode: overlay;
         background-repeat: no-repeat;
         background-size: 100% 550px;
         object-fit: center;
@@ -42,18 +43,24 @@
         background-color: #FFF !important;
     }
 
+    .cit-nav ul li:first-child::before {
+        content: none;
+        /* Removes the ::before content */
+    }
+
     .cit-nav ul li a {
         text-decoration-line: none;
         padding: 8px 8px;
         border-bottom: solid 1px;
         border-left: solid 1px;
         border-right: solid 1px;
+        border-top: solid 1px;
         height: 75px;
     }
 
     .cit-nav ul li a:hover {
-        background-color: #DCDCDC;
-        color: #000;
+        background-color: #01ABF1;
+        color: white;
 
     }
 
@@ -79,15 +86,16 @@
     }
 </style>
 <div class="cit-header">
-    <h2 style="color:black; font-size:28px;">&nbsp;</h2>
+    <h2 style="color:white; font-size:28px;">&nbsp;</h2>
 
-    <h2 style="color:black;padding:40px;">World Environment Situation Room Citizen Science portal</h2>
+    <h2 style="color:white;padding:40px; text-shadow: 1px 1px 10px black; font-weight: 700;">World Environment Situation
+        Room - Citizen Science Portal</h2>
 </div>
 
 <div class="cit-navbar">
     <nav class="cit-nav">
-        <ul>
-            <li><a href="#citizen">Key Resources</a></li>
+        <ul style="padding-left: 0px !important;">
+            <li style="padding-left: 0px !important;"><a href="#citizen">Key Resources</a></li>
             <li><a href="#health">Health</a></li>
             <li><a href="#biodiversity">Biodiversity</a></li>
             <li><a href="#hydro-air">Air Quality and Weather</a></li>
